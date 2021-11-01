@@ -2,6 +2,7 @@ package com.example.myfirstmemoapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.myfirstmemoapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -11,8 +12,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.fab.setOnClickListener {
+        binding.fab.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(v: View?) {
 
-        }
+            }
+        })
     }
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyFirstMemoApp</string>
+    <string name="title">제목</string>
+    <string name="content">내용</string>
+    <string name="back">뒤로가기</string>
+    <string name="save">저장</string>
 </resources>
