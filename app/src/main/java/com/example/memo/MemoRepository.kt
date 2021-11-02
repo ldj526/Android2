@@ -1,4 +1,4 @@
-package com.example.myfirstmemoapp
+package com.example.memo
 
 import android.app.Application
 import androidx.lifecycle.LiveData

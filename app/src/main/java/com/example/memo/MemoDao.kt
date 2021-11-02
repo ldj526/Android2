@@ -1,4 +1,4 @@
-package com.example.myfirstmemoapp
+package com.example.memo
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

@@ -1,4 +1,4 @@
-package com.example.myfirstmemoapp
+package com.example.memo
 
 import android.content.Context
 import androidx.room.Database

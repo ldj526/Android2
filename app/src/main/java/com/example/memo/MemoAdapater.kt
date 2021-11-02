@@ -1,10 +1,10 @@
-package com.example.myfirstmemoapp
+package com.example.memo
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myfirstmemoapp.databinding.ItemMemoBinding
+import com.example.memo.databinding.ItemMemoBinding
 
 class MemoAdapater(private val context: Context) :
     RecyclerView.Adapter<MemoAdapater.MemoViewHolder>() {

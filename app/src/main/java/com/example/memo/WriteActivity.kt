@@ -1,14 +1,11 @@
-package com.example.myfirstmemoapp
+package com.example.memo
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import androidx.activity.viewModels
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import com.example.myfirstmemoapp.databinding.ActivityWriteBinding
+import com.example.memo.databinding.ActivityWriteBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

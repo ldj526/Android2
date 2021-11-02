@@ -1,4 +1,4 @@
-package com.example.myfirstmemoapp
+package com.example.memo
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

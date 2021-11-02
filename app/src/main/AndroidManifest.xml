@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myfirstmemoapp">
+    package="com.example.memo">
 
     <application
         android:allowBackup="true"
@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstMemoApp">
         <activity
-            android:name=".WriteActivity"
+            android:name="com.example.memo.WriteActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.memo.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.example.memo.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
