@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.memo.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
 
         model.getAll().observe(this, Observer {
+            Collections.reverse(it)     // gridLayout에서 최근목록을 가장 위로 해주기 위함
             adapater.setList(it)
             adapater.notifyDataSetChanged()     // 데이터를 신규 추가 or 삭제 시 adapter에게 값을 알려줌
         })
@@ -36,6 +38,6 @@ class MainActivity : AppCompatActivity() {
         adapater = MemoAdapater(this)   // Adapter 생성
         binding.recyclerView.adapter = adapater     // 화면의 RecyclerView와 연결
         binding.recyclerView.layoutManager =
-            GridLayoutManager(applicationContext, 3, GridLayoutManager.VERTICAL, true)
+            GridLayoutManager(applicationContext, 3, GridLayoutManager.VERTICAL, false)
     }
 }
