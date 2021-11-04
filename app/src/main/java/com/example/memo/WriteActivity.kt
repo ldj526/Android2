@@ -19,10 +19,7 @@ class WriteActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
-            btnBack.setOnClickListener {
-                finish()
-            }
-            btnSave.setOnClickListener {
+            ivBack.setOnClickListener {
                 var intent = Intent(this@WriteActivity, MainActivity::class.java)
                 lifecycleScope.launch(Dispatchers.IO){
                     model.insert(Memo(etTitle.text.toString(), etContent.text.toString()))
