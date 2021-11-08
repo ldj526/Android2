@@ -4,19 +4,19 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/my_memo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/my_memo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Memo">
         <activity
-            android:name="com.example.memo.WriteActivity"
+            android:name="com.example.memo.activity.WriteActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.memo.MainActivity"
+            android:name="com.example.memo.activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.memo.SplashActivity"
+            android:name="com.example.memo.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

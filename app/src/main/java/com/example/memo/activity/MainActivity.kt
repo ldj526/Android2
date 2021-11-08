@@ -1,13 +1,14 @@
-package com.example.memo
+package com.example.memo.activity
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.memo.databinding.ActivityMainBinding
+import com.example.memo.viewmodel.MemoViewModel
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,13 +28,14 @@ class MainActivity : AppCompatActivity() {
             Collections.reverse(it)     // gridLayout에서 최근목록을 가장 위로 해주기 위함
             adapter.setList(it)
             adapter.notifyDataSetChanged()     // 데이터를 신규 추가 or 삭제 시 adapter에게 값을 알려줌
+
         })
 
         binding.fab.setOnClickListener {    // WriteActivity로 이동
             val intent = Intent(this, WriteActivity::class.java)
             startActivity(intent)
+            finish()
         }
-        val customDecoration = CustomDecoration(10f, 10f, Color.BLUE)
     }
 
 
@@ -43,8 +45,11 @@ class MainActivity : AppCompatActivity() {
             recyclerView.adapter = adapter     // 화면의 RecyclerView와 연결
             recyclerView.layoutManager =
                 GridLayoutManager(applicationContext, 2, GridLayoutManager.VERTICAL, false)
-            val customDecoration = CustomDecoration(3f, 3f, Color.BLACK)
-            recyclerView.addItemDecoration(customDecoration)
         }
+        adapter.setItemClickListener(object : MemoAdapater.OnItemClickListener {
+            override fun onClick(v: View, position: Int) {
+
+            }
+        })
     }
 }

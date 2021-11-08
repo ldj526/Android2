@@ -1,23 +1,24 @@
-package com.example.memo
+package com.example.memo.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.memo.model.Memo
 
 @Database(entities = arrayOf(Memo::class), version = 1)
-abstract class AppDatabase : RoomDatabase() {
+abstract class MemoDatabase : RoomDatabase() {
     abstract fun memoDao(): MemoDao
 
     companion object {
-        private var INSTANCE: AppDatabase? = null
+        private var INSTANCE: MemoDatabase? = null
 
-        fun getInstance(context: Context): AppDatabase? {
+        fun getInstance(context: Context): MemoDatabase? {
             if (INSTANCE == null) {
-                synchronized(AppDatabase::class) {
+                synchronized(MemoDatabase::class) {
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
-                        AppDatabase::class.java,
+                        MemoDatabase::class.java,
                         "dbname.db"
                     ).build()
                 }

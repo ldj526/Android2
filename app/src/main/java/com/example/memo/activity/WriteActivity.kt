@@ -1,4 +1,4 @@
-package com.example.memo
+package com.example.memo.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.memo.databinding.ActivityWriteBinding
+import com.example.memo.model.Memo
+import com.example.memo.viewmodel.MemoViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -21,10 +23,9 @@ class WriteActivity : AppCompatActivity() {
         with(binding) {
             ivBack.setOnClickListener {
                 var intent = Intent(this@WriteActivity, MainActivity::class.java)
-                lifecycleScope.launch(Dispatchers.IO){
-                    model.insert(Memo(etTitle.text.toString(), etContent.text.toString()))
-                }
+                model.insert(Memo(etTitle.text.toString(), etContent.text.toString()))
                 startActivity(intent)
+                finish()
             }
         }
     }
