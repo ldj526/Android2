@@ -1,7 +1,9 @@
 package com.example.memo.activity
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -46,10 +48,5 @@ class MainActivity : AppCompatActivity() {
             recyclerView.layoutManager =
                 GridLayoutManager(applicationContext, 2, GridLayoutManager.VERTICAL, false)
         }
-        adapter.setItemClickListener(object : MemoAdapater.OnItemClickListener {
-            override fun onClick(v: View, position: Int) {
-
-            }
-        })
     }
 }

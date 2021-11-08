@@ -1,14 +1,13 @@
 package com.example.memo.activity
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.memo.databinding.ItemMemoBinding
 import com.example.memo.model.Memo
-import java.util.*
-import kotlin.collections.ArrayList
 
 class MemoAdapater(private val context: Context) :
     RecyclerView.Adapter<MemoAdapater.MemoViewHolder>() {
@@ -57,6 +56,15 @@ class MemoAdapater(private val context: Context) :
             with(binding) {
                 tvTitle.text = item.title
                 tvContent.text = item.content
+                cardView.setOnClickListener {
+                    val intent = Intent(context, WriteActivity::class.java).apply {
+                        putExtra("title", item.title.toString())
+                        putExtra("content", item.content.toString())
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }.run {
+                        context.startActivity(this)
+                    }
+                }
             }
         }
     }

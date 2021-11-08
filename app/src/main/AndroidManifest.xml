@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Memo">
         <activity
-            android:name="com.example.memo.activity.WriteActivity"
+            android:name=".activity.WriteActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.memo.activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.memo.activity.SplashActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,4 +27,3 @@
     </application>
 
 </manifest>
-
