@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(v: View, data: Memo, position: Int) {
                 val intent = Intent(this@MainActivity, UpdateActivity::class.java).apply {
                     putExtra("data", data)
-                    putExtra("position", position)
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 }.run {
                     startActivity(this)
