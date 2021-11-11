@@ -1,7 +1,6 @@
 package com.example.memo.activity
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,13 +27,10 @@ class MemoAdapater(private val context: Context) :
         position: Int
     ) { // 위의 onCreateViewHolder에서 만든 view와 실제 입력되는 각각의 데이터를 연결한다.
         holder.bind(datas[position])
-        holder.itemView.setOnClickListener {    // 만든 itemClickListener를 연결
-            itemClickListener.onClick(it, position)
-        }
     }
 
     interface OnItemClickListener {     // Click interface 정의
-        fun onClick(v: View, position: Int)
+        fun onClick(v: View, data: Memo, position: Int)
     }
 
     fun setItemClickListener(onItemClickListener: OnItemClickListener) {      // ClickListener 등록 메서드
@@ -56,14 +52,11 @@ class MemoAdapater(private val context: Context) :
             with(binding) {
                 tvTitle.text = item.title
                 tvContent.text = item.content
-                cardView.setOnClickListener {
-                    val intent = Intent(context, WriteActivity::class.java).apply {
-                        putExtra("title", item.title.toString())
-                        putExtra("content", item.content.toString())
-                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    }.run {
-                        context.startActivity(this)
-                    }
+            }
+            val pos = adapterPosition
+            if (pos != RecyclerView.NO_POSITION) {
+                itemView.setOnClickListener {
+                    itemClickListener?.onClick(itemView, item, pos)
                 }
             }
         }

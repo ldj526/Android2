@@ -21,11 +21,9 @@ class WriteActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
-            etTitle.setText(intent.getStringExtra("title"))
-            etContent.setText(intent.getStringExtra("content"))
             ivBack.setOnClickListener {
                 var intent = Intent(this@WriteActivity, MainActivity::class.java)
-                model.insert(Memo(etTitle.text.toString(), etContent.text.toString()))
+                model.insert(Memo(0, etTitle.text.toString(), etContent.text.toString()))
                 startActivity(intent)
                 finish()
             }

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Memo">
         <activity
+            android:name=".activity.UpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.WriteActivity"
             android:exported="false" />
         <activity
